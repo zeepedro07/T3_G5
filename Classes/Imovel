@@ -1,0 +1,37 @@
+from classes.gclass import Gclass
+
+class Imovel(Gclass):
+    def __init__(self, endereco, preco, tipologia, area_util, n_casas_de_banho, n_quartos, mobilidade, piscina, descricao, srcfoto, tipo):
+        super().__init__()
+        self.endereco = endereco
+        self.preco = preco
+        self.tipologia = tipologia
+        self.area_util = area_util
+        self.n_casas_de_banho = n_casas_de_banho
+        self.n_quartos = n_quartos
+        self.mobilidade = mobilidade
+        self.piscina = piscina
+
+    def set_endereco(self, endereco):
+        self.endereco = endereco
+
+    def set_preco(self, preco):
+        self.preco = preco
+
+    def set_tipologia(self, tipologia):
+        self.tipologia = tipologia
+
+    def set_area_util(self, area_util):
+        self.area_util = area_util
+
+    def set_n_casas_de_banho(self, n_casas_de_banho):
+        self.n_casas_de_banho = n_casas_de_banho
+
+    def set_n_quartos(self, n_quartos):
+        self.n_quartos = n_quartos
+
+    def set_mobilidade(self, mobilidade):
+        self.mobilidade = mobilidade
+
+    def set_piscina(self, piscina):
+        self.piscina = piscina
