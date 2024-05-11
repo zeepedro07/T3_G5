@@ -1,61 +1,146 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May 11 18:23:56 2024
+
+@author: carva
+"""
+
 from classes.gclass import Gclass
 
 class Imovel(Gclass):
-    def __init__(self, endereco, preco, tipologia, area_util, n_casas_de_banho, n_quartos, modalidade, piscina, tipoimovel, num_andar, num_garagens, area_exterior, num_vagas, area_total):
+    obj = dict()
+    lst = list()
+    pos = 0
+    sortkey = ''
+    auto_number = 0
+    nkey = 1
+    
+    # class attributes, identifier attribute must be the first one on the list
+    att = ["_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos,_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
+    # Class header title
+    header = 'Imóvel'
+    # field description for use in, for example, in input form
+    des = ["Endereço","Preço","Tipologia","Área Util","Número de casas de banho","Número de quartos","Modalidade","Piscina","Tipo de Imóvel","Número do andar","Número de lugares de garagem","Área exterior","Área total"]
+    # Constructor: Called when an object is instantiated
+    def __init__(self, endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
         super().__init__()
-        self.endereco = endereco
-        self.preco = preco
-        self.tipologia = tipologia
-        self.area_util = area_util
-        self.n_casas_de_banho = n_casas_de_banho
-        self.n_quartos = n_quartos
-        self.modalidade = modalidade
-        self.piscina = piscina
-        self.tipoimovel = tipoimovel
-        self.num_andar = num_andar
-        self.num_garagens = num_garagens
-        self.area_exterior = area_exterior
-        self.num_vagas = num_vagas
-        self.area_total = area_total
+        # Object attributes
+        self._endereco = endereco
+        self._preco = preco
+        self._tipologia = tipologia
+        self._area_util = area_util
+        self._n_casas_de_banho = n_casas_de_banho
+        self._n_quartos = n_quartos
+        self._modalidade = modalidade
+        self._piscina = piscina
+        self._tipoimovel = tipoimovel
+        self._num_andar = num_andar
+        self._num_garagens = num_garagens
+        self._area_exterior = area_exterior
+        self._area_total = area_total
 
-    def set_endereco(self, endereco):
-        self.endereco = endereco
+        # Add the new object to the Imovel_login list
+        Imovel.obj[endereco] = self
+        Imovel.lst.append(endereco)
 
-    def set_preco(self, preco):
-        self.preco = preco
+    
+    
+    @property
+    def endereco(self):
+        return self._endereco
 
-    def set_tipologia(self, tipologia):
-        self.tipologia = tipologia
+    @property
+    def preco(self):
+        return self._preco
 
-    def set_area_util(self, area_util):
-        self.area_util = area_util
+    @preco.setter
+    def preco(self, preco):
+        self._preco = preco
 
-    def set_n_casas_de_banho(self, n_casas_de_banho):
-        self.n_casas_de_banho = n_casas_de_banho
+    @property
+    def tipologia(self):
+        return self._tipologia
 
-    def set_n_quartos(self, n_quartos):
-        self.n_quartos = n_quartos
+    @tipologia.setter
+    def tipologia(self, tipologia):
+        self._tipologia = tipologia
 
-    def set_modalidade(self, modalidade):
-        self.modalidade = modalidade
+    @property
+    def area_util(self):
+        return self._area_util
 
-    def set_piscina(self, piscina):
-        self.piscina = piscina
-        
+    @area_util.setter
+    def area_util(self, area_util):
+        self._area_util = area_util
+
+    @property
+    def n_casas_de_banho(self):
+        return self._n_casas_de_banho
+
+    @n_casas_de_banho.setter
+    def n_casas_de_banho(self, n_casas_de_banho):
+        self._n_casas_de_banho = n_casas_de_banho
+
+    @property
+    def n_quartos(self):
+        return self._n_quartos
+
+    @n_quartos.setter
+    def n_quartos(self, n_quartos):
+        self._n_quartos = n_quartos
+
+    @property
+    def modalidade(self):
+        return self._modalidade
+
+    @modalidade.setter
+    def modalidade(self, modalidade):
+        self._modalidade = modalidade
+
+    @property
+    def piscina(self):
+        return self._piscina
+
+    @piscina.setter
+    def piscina(self, piscina):
+        self._piscina = piscina
+
+    @property
+    def tipoimovel(self):
+        return self._tipoimovel
+
+    @tipoimovel.setter
     def tipoimovel(self, tipoimovel):
-        self.tipoimovel = tipoimovel
-        
+        self._tipoimovel = tipoimovel
+
+    @property
+    def num_andar(self):
+        return self._num_andar
+
+    @num_andar.setter
     def num_andar(self, num_andar):
-        self.num_andar = num_andar
-        
+        self._num_andar = num_andar
+
+    @property
+    def num_garagens(self):
+        return self._num_garagens
+
+    @num_garagens.setter
     def num_garagens(self, num_garagens):
-        self.num_garagens = num_garagens
-        
+        self._num_garagens = num_garagens
+
+    @property
+    def area_exterior(self):
+        return self._area_exterior
+
+    @area_exterior.setter
     def area_exterior(self, area_exterior):
-        self.area_exterior = area_exterior
-        
-    def num_vagas(self, num_vagas):
-        self.num_vagas = num_vagas
-        
+        self._area_exterior = area_exterior
+
+    @property
+    def area_total(self):
+        return self._area_total
+
+    @area_total.setter
     def area_total(self, area_total):
-        self.area_total = area_total
+        self._area_total = area_total

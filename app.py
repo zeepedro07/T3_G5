@@ -88,5 +88,5 @@ def uc():
 
     
 if __name__ == '__main__':
-    app.run(debug=False,port=6001)
+    app.run(debug=True,port=6001)
     #app.run()
