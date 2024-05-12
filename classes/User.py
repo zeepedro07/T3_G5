@@ -25,7 +25,7 @@ class User(Gclass):
     def __init__(self,code,nome,email,telemovel):
         super().__init__()
         # Object attributes
-        self._code = int(code)
+        self._code = code
         self._nome = nome
         self._email = email
         self._telemovel = telemovel

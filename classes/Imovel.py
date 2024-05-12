@@ -16,7 +16,7 @@ class Imovel(Gclass):
     nkey = 1
     
     # class attributes, identifier attribute must be the first one on the list
-    att = ["_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos,_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
+    att = ["_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos","_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
     # Class header title
     header = 'Imóvel'
     # field description for use in, for example, in input form

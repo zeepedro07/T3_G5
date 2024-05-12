@@ -9,6 +9,8 @@ from flask import Flask, render_template, request, session
 from classes.User import User
 from classes.Imovel import Imovel
 from classes.userlogin import Userlogin
+from classes.User import User
+from classes.Imovel import Imovel
 
 prev_option = ""
 
