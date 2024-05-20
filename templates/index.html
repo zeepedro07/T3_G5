@@ -4,11 +4,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
 {% endblock %}
 
-{% block content %}
+{% block body_class %}
+    home-background
+{% endblock %}
 
+{% block content %}
     <div class="dados">
         <br><br>
-            <h1>Imóveis</h1>
+        <h1>Imóveis</h1>
     </div>
     
 {% endblock %}
