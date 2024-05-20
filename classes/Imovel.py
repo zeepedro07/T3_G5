@@ -16,15 +16,18 @@ class Imovel(Gclass):
     nkey = 1
     
     # class attributes, identifier attribute must be the first one on the list
-    att = ["_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos","_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
+    att = ["_code","_codeuser","_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos","_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
     # Class header title
     header = 'Imóvel'
     # field description for use in, for example, in input form
-    des = ["Endereço","Preço","Tipologia","Área Util","Número de casas de banho","Número de quartos","Modalidade","Piscina","Tipo de Imóvel","Número do andar","Número de lugares de garagem","Área exterior","Área total"]
+    des = ["Code","Código do Utilizador","Endereço","Preço","Tipologia","Área Util","Número de casas de banho","Número de quartos","Modalidade","Piscina","Tipo de Imóvel","Número do andar","Número de lugares de garagem","Área exterior","Área total"]
     # Constructor: Called when an object is instantiated
-    def __init__(self, endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
+    def __init__(self,code,codeuser, endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
         super().__init__()
         # Object attributes
+        
+        self._code = code
+        self._codeuser = codeuser
         self._endereco = endereco
         self._preco = preco
         self._tipologia = tipologia
@@ -40,10 +43,26 @@ class Imovel(Gclass):
         self._area_total = area_total
 
         # Add the new object to the Imovel_login list
-        Imovel.obj[endereco] = self
-        Imovel.lst.append(endereco)
+        Imovel.obj[code] = self
+        Imovel.lst.append(code)
+   
 
+        
+    @property
+    def code(self):
+        return self._code
     
+    @code.setter
+    def code(self, code):
+        self._code = code
+        
+    @property
+    def codeuser(self):
+        return self._codeuser
+    
+    @codeuser.setter
+    def codeuser(self, codeuser):
+        self._codeuser = codeuser
     
     @property
     def endereco(self):

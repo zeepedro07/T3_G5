@@ -15,21 +15,14 @@
                 {% else %}
                     <li><a class="button" href="/logoff">Logoff</a></li>
                     
-                    <li><a class="button" href="/gform/Customer">Customer</a></li>
                     <li><a class="button" href="/submenu?subm=Imovel">Imóvel</a></li>
                     <li><a class="button" href="/submenu?subm=User">Utilizador</a></li>
-                    <li><a class="button" href="/submenu?subm=product">Product</a></li>
-                    <li><a class="button" href="/submenu?subm=order">Order</a></li>
+                   
                     
                     
                     
                     <li><a class="button" style="color:green">User: {{ulogin}}</a></li>
                     
-                    <br><br>
-                    {% if submenu == "order" %}
-                        <li><a class="button" href="/subform/CustomerOrder_OrderProduct?option=''&subm=order">Order lines</a></li>
-                        <li><a class="button" href="/order/mapa?option=''">Mapa encomendas</a></li>
-                    {% endif %} 
                     
                     {% if submenu == "Imovel" %}
                         <li><a class="button" href="/gform/Imovel?option=''&subm=Imovel">Imovel</a></li>
@@ -42,10 +35,6 @@
                     {% endif %} 
                     
                     
-                    {% if submenu == "product" %}
-                        <li><a class="button" href="/gform/Product?subm=product">Product</a></li>
-                        <li><a class="button" href="/productform?subm=product">Product(foto)</a></li>
-                    {% endif %} 
                     
                 {% endif %}
             </ul>
