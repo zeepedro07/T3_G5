@@ -14,18 +14,13 @@
         <nav>
             <ul class="menu">
                 {% if ulogin == None %}
-                    <li><a class="button" href="/login">Login</a></li>
+                    <li><a class="button" href="/login">Iniciar Sessão</a></li>
                 {% else %}
-                    <li><a class="button" href="/logoff">Logoff</a></li>
+                    <li><a class="button" href="/logoff">Sair</a></li>
                     
                     <li><a class="button" href="/submenu?subm=Imovel">Imóvel</a></li>
                     <li><a class="button" href="/submenu?subm=User">Utilizador</a></li>
-                   
-                    
-                    
-                    
-                    <li><a class="button" style="color:grey">User: {{ulogin}}</a></li>
-                    
+                                    
                     
                     {% if submenu == "Imovel" %}
                         <li><a class="button" href="/gform/Imovel?option=''&subm=Imovel">Imovel</a></li>
