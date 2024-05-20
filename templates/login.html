@@ -7,16 +7,17 @@
 {% block content %}
     <div class = "dados">
         <br><br>
-        <h1>Login</h1>
+        <h1>Iniciar sessão</h1>
         <br>
+        <img src="https://img.freepik.com/premium-vector/login-icon-user-icon-flat-style-isolated-gray-background-key-symbol-your-web-site-design-picture-art-logo-app-ui-vector-illustration-eps10-jpeg-image_775815-637.jpg?w=360">
         <form id="form" action="/chklogin" method="post">
-            <label for="user">User:</label>
+            <label for="user">Utilizador:</label>
             <input type="text" id="user" name="user"  value = "{{user}}" size="30"/>
             <br><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" value = "{{password}}" size="30"/>
             <br><br>
-            <button type="submit" class="button1">Login</button>
+            <button type="submit" class="button1">ENTRAR</button>
         </form>
         <br><br>
         <h3>{{resul}}</h3>
