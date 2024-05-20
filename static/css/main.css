@@ -1,8 +1,31 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
 body{
+    background-color: #ffffff;
     margin: 0;
     min-height: 300px;
 }
-
+/* Background image styling for the home page */
+.home-background {
+    background-image: url('https://casabonitabeach.com/wp-content/uploads/2022/04/Casa-Bonita-pool-with-house-in-background-dusk-1.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+/* Content styling */
+.content {
+    position: relative;
+    z-index: 1;
+    color: #333;
+    padding: 20px;
+}
+.home-background .content {
+    color: white; /* White text for better readability over image */
+}
 nav{
     width: 100%;
     float: left;
