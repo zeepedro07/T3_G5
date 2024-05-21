@@ -12,8 +12,9 @@ class Imovel(Gclass):
     lst = list()
     pos = 0
     sortkey = ''
-    auto_number = 0
+    auto_number = 1
     nkey = 1
+    cod=0
     
     # class attributes, identifier attribute must be the first one on the list
     att = ["_code","_codeuser","_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos","_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
@@ -24,9 +25,11 @@ class Imovel(Gclass):
     # Constructor: Called when an object is instantiated
     def __init__(self,code,codeuser, endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
         super().__init__()
+        Imovel.cod+=1
         # Object attributes
+    
         
-        self._code = code
+        self._code=Imovel.cod
         self._codeuser = codeuser
         self._endereco = endereco
         self._preco = preco
@@ -43,8 +46,8 @@ class Imovel(Gclass):
         self._area_total = area_total
 
         # Add the new object to the Imovel_login list
-        Imovel.obj[code] = self
-        Imovel.lst.append(code)
+        Imovel.obj[Imovel.cod] = self
+        Imovel.lst.append(Imovel.cod)
    
 
         

@@ -12,9 +12,9 @@ class User(Gclass):
     lst = list()
     pos = 0
     sortkey = ''
-    auto_number = 0
+    auto_number = 1
     nkey = 1
-    
+    cod=0
     # class attributes, identifier attribute must be the first one on the list
     att = ['_code','_nome','_email','_telemovel']
     # Class header title
@@ -24,15 +24,16 @@ class User(Gclass):
     # Constructor: Called when an object is instantiated
     def __init__(self,code,nome,email,telemovel):
         super().__init__()
+        User.cod+=1
         # Object attributes
-        self._code = code
+        self._code = User.cod
         self._nome = nome
         self._email = email
         self._telemovel = telemovel
 
         # Add the new object to the User_login list
-        User.obj[code] = self
-        User.lst.append(code)
+        User.obj[User.cod] = self
+        User.lst.append(User.cod)
 
     
     @property
