@@ -11,6 +11,7 @@ from classes.Imovel import Imovel
 from classes.userlogin import Userlogin
 from classes.User import User
 from classes.Imovel import Imovel
+from classes.Agendamentos import Agendamentos
 
 prev_option = ""
 
