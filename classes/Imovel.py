@@ -22,7 +22,7 @@ class Imovel(Gclass):
     # field description for use in, for example, in input form
     des = ["Code","Código do Utilizador","Endereço","Preço","Tipologia","Área Util","Número de casas de banho","Número de quartos","Modalidade","Piscina","Tipo de Imóvel","Número do andar","Número de lugares de garagem","Área exterior","Área total"]
     # Constructor: Called when an object is instantiated
-    def __init__(self,code,codeuser, endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
+    def __init__(self,code,codeuser,endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
         super().__init__()
         # Object attributes
         
@@ -52,9 +52,7 @@ class Imovel(Gclass):
     def code(self):
         return self._code
     
-    @code.setter
-    def code(self, novo):
-        self._code = novo
+    
         
     @property
     def codeuser(self):

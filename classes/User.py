@@ -39,9 +39,7 @@ class User(Gclass):
     def code(self):
         return self._code
     
-    @code.setter
-    def code(self, novo):
-        self._code = novo 
+    
     
     @property
     def nome(self):
@@ -65,6 +63,6 @@ class User(Gclass):
     
     @telemovel.setter
     def telemovel(self, novo):
-        self._telemovel = novo
+        self._telemovel = novo 
 
         
