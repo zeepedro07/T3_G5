@@ -20,6 +20,7 @@
                     
                     <li><a class="button" href="/submenu?subm=Imovel">Imóvel</a></li>
                     <li><a class="button" href="/submenu?subm=User">Utilizador</a></li>
+                    <li><a class="button" href="/submenu?subm=Agendamentos">Agendamentos</a></li>
                                     
                     
                     {% if submenu == "Imovel" %}
@@ -31,6 +32,12 @@
                         <li><a class="button" href="/gform/User?option=''&subm=User">Utilizador</a></li>
                         <li><a class="button" href="/gformT/User?option=''&subm=User">UtilizadorT</a></li>
                     {% endif %} 
+                    
+                    {% if submenu == "Agendamentos" %}
+                        <li><a class="button" href="/gform/Agendamentos?option=''&subm=Agendamentos">Agendamentos</a></li>
+                        <li><a class="button" href="/gformT/Agendamentos?option=''&subm=Agendamentos">AgendamentosT</a></li>
+                    {% endif %} 
+                    
                     
                     
                     
