@@ -8,27 +8,50 @@
     {% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {% block extra_styles %}{% endblock %}
+    <style>
+        .button {
+            background-color: #00818b; 
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #00D69E; 
+        }
+    </style>
   </head>
   <body class="{% block body_class %}{% endblock %}">
      <div class="content">
         <nav>
             <ul class="menu">
+                {% if ulogin != None %}
+                    <li><button class="button" onclick="history.back()">Voltar</button></li>
+                {% endif %}
                 {% if ulogin == None %}
                     <li><a class="button" href="/login">Iniciar Sessão</a></li>
                 {% else %}
                     <li><a class="button" href="/logoff">Sair</a></li>
-                    
+                    {% if usergroup == "users" %} 
+                    <li><a class="button" href="/submenu?subm=Imovel">Imóvel</a></li>
+                    <li><a class="button" href="/submenu?subm=Agendamentos">Agendamentos</a></li>                                    
+                    <br><br>
+                    {% endif %}
+                    {% if usergroup == "admin" %}     
                     <li><a class="button" href="/submenu?subm=Imovel">Imóvel</a></li>
                     <li><a class="button" href="/submenu?subm=User">Utilizador</a></li>
-                    <li><a class="button" href="/submenu?subm=Agendamentos">Agendamentos</a></li>
-                                    
-                    
+                    <li><a class="button" href="/submenu?subm=Agendamentos">Agendamentos</a></li>                                       
+                    <br><br>
+                    {% endif %} 
+
                     {% if submenu == "Imovel" %}
                         <li><a class="button" href="/gform/Imovel?option=''&subm=Imovel">Imovel</a></li>
                         <li><a class="button" href="/gformT/Imovel?option=''&subm=Imovel">ImovelT</a></li>
                     {% endif %} 
                     
-                    {% if submenu == "User" %}
+                    {% if submenu == "User" and usergroup != "users" %}
                         <li><a class="button" href="/gform/User?option=''&subm=User">Utilizador</a></li>
                         <li><a class="button" href="/gformT/User?option=''&subm=User">UtilizadorT</a></li>
                     {% endif %} 
@@ -37,10 +60,7 @@
                         <li><a class="button" href="/gform/Agendamentos?option=''&subm=Agendamentos">Agendamentos</a></li>
                         <li><a class="button" href="/gformT/Agendamentos?option=''&subm=Agendamentos">AgendamentosT</a></li>
                     {% endif %} 
-                    
-                    
-                    
-                    
+                 
                 {% endif %}
             </ul>
         </nav>

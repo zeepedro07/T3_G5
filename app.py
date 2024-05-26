@@ -33,7 +33,7 @@ import subs_mapaOrderform as mapasub
 
 @app.route("/")
 def index():
-    return render_template("index.html", ulogin=session.get("user"))
+    return render_template("index.html", ulogin=session.get("user"), usergroup=session.get('users'))
     
 @app.route("/login")
 def login():
@@ -51,7 +51,7 @@ def chklogin():
 def getsubm():
     global submenu
     submenu = request.args.get("subm")
-    return render_template("index.html", ulogin=session.get("user"),submenu=submenu)
+    return render_template("index.html", ulogin=session.get("user"),submenu=submenu,usergroup=session.get('users'))
 
 @app.route("/gform/<cname>", methods=["post","get"])
 def gform(cname=''):
@@ -84,7 +84,7 @@ def ordermapa():
 
 @app.route("/uc", methods=["post","get"])
 def uc():
-    return render_template("uc.html", ulogin=session.get("user"),submenu=submenu)
+    return render_template("uc.html", ulogin=session.get("user"),submenu=submenu, usergroup=session.get('users'))
 
 
     
