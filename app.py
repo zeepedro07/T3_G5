@@ -87,8 +87,6 @@ def uc():
     return render_template("uc.html", ulogin=session.get("user"),submenu=submenu)
 
 
-
-
     
 if __name__ == '__main__':
     app.run(debug=True,port=6001)
