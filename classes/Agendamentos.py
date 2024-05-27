@@ -27,7 +27,8 @@ class Agendamentos(Gclass):
         super().__init__()
         Agendamentos.cod+=1
         # Object attributes
-    
+        if self._is_duplicate(codeImovel, data):
+            raise ValueError("Appointment already exists for the given property and date.")
         
         self._code=Agendamentos.cod
         self._codeImovel = codeImovel
@@ -36,6 +37,12 @@ class Agendamentos(Gclass):
         # Add the new object to the Imovel_login list
         Agendamentos.obj[Agendamentos.cod] = self
         Agendamentos.lst.append(Agendamentos.cod)
+        
+    def _is_duplicate(self, codeImovel, data):
+        for obj in Agendamentos.obj.values():
+            if obj.codeImovel == codeImovel and obj.data == datetime.date.fromisoformat(data):
+                return True
+        return False
    
 
         
