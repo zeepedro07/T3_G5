@@ -21,7 +21,7 @@ class Agendamentos(Gclass):
     # Class header title
     header = 'Agendamentos'
     # field description for use in, for example, in input form
-    des = ["Code","Código do Imóvel","Data"]
+    des = ["Code","Código do Imóvel","Data (AAAA-MM-DD)"]
     # Constructor: Called when an object is instantiated
     def __init__(self,code,codeImovel, data):
         super().__init__()

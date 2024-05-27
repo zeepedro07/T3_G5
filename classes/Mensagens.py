@@ -12,8 +12,9 @@ class Mensagens(Gclass):
     lst = list()
     pos = 0
     sortkey = ''
-    auto_number = 0
+    auto_number = 1
     nkey = 1
+    cod=0
     
     # class attributes, identifier attribute must be the first one on the list
     att = ["_code","_cdi","_cdu","_msg","_dataehora"]
@@ -24,16 +25,17 @@ class Mensagens(Gclass):
     # Constructor: Called when an object is instantiated
     def __init__(self,code,cdi,cdu,msg,dataehora):
         super().__init__()
+        Mensagens.cod+=1
         # Object attributes
-        self._code=code
+        self._code= Mensagens.cod
         self._cdi = cdi
         self._cdu = cdu
         self._msg = msg
         self._dataehora = dataehora
       
         # Add the new object to the Mensagens_login list
-        Mensagens.obj[code] = self
-        Mensagens.lst.append(code)
+        Mensagens.obj[Mensagens.cod] = self
+        Mensagens.lst.append(Mensagens.cod)
 
     @property
     def code(self):

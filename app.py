@@ -6,6 +6,7 @@ import os
 from classes.User import User
 from classes.Imovel import Imovel
 from classes.Agendamentos import Agendamentos
+from classes.Mensagens import Mensagens
 
 from classes.userlogin import Userlogin
 
@@ -14,6 +15,7 @@ app = Flask(__name__)
 User.read(filename + 'business.db')
 Imovel.read(filename + 'business.db')
 Agendamentos.read(filename + 'business.db')
+Mensagens.read(filename + "business.db")
 Userlogin.read(filename + 'business.db')
 prev_option = ""
 submenu = ""
