@@ -28,7 +28,7 @@
         <nav>
             <ul class="menu">
                 {% if ulogin != None %}
-                    <li><button class="button" onclick="history.back()">Voltar</button></li>
+                    <li><button class="button" onclick="window.location.href = '/submenu?'">Voltar</button></li>
                 {% endif %}
                 {% if ulogin == None %}
                     <li><a class="button" href="/login">Iniciar Sessão</a></li>
