@@ -16,17 +16,17 @@ class Imovel(Gclass):
     nkey = 1
     cod=0
     
-    # class attributes, identifier attribute must be the first one on the list
+
     att = ["_code","_codeuser","_endereco","_preco","_tipologia","_area_util","_n_casas_de_banho","_n_quartos","_modalidade","_piscina","_tipoimovel","_num_andar","_num_garagens","_area_exterior","_area_total"]
-    # Class header title
+
     header = 'Imóvel'
-    # field description for use in, for example, in input form
+
     des = ["Code","Código do Utilizador","Endereço","Preço","Tipologia","Área Util","Número de casas de banho","Número de quartos","Modalidade","Piscina","Tipo de Imóvel","Número do andar","Número de lugares de garagem","Área exterior","Área total"]
-    # Constructor: Called when an object is instantiated
+
     def __init__(self,code,codeuser, endereco,preco,tipologia,area_util,n_casas_de_banho,n_quartos,modalidade,piscina,tipoimovel,num_andar,num_garagens,area_exterior,area_total):
         super().__init__()
         Imovel.cod+=1
-        # Object attributes
+
     
         
         self._code=Imovel.cod
@@ -45,7 +45,7 @@ class Imovel(Gclass):
         self._area_exterior = area_exterior
         self._area_total = area_total
 
-        # Add the new object to the Imovel_login list
+
         Imovel.obj[Imovel.cod] = self
         Imovel.lst.append(Imovel.cod)
    
