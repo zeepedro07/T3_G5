@@ -16,17 +16,17 @@ class Agendamentos(Gclass):
     nkey = 1
     cod=0
     
-    # class attributes, identifier attribute must be the first one on the list
+
     att = ["_code","_codeImovel","_data"]
-    # Class header title
+
     header = 'Agendamentos'
-    # field description for use in, for example, in input form
+
     des = ["Code","Código do Imóvel","Data (AAAA-MM-DD)"]
-    # Constructor: Called when an object is instantiated
+
     def __init__(self,code,codeImovel, data):
         super().__init__()
         Agendamentos.cod+=1
-        # Object attributes
+
         if self._is_duplicate(codeImovel, data):
             raise ValueError("Appointment already exists for the given property and date.")
         
@@ -34,7 +34,7 @@ class Agendamentos(Gclass):
         self._codeImovel = codeImovel
         self._data=datetime.date.fromisoformat(data)
 
-        # Add the new object to the Imovel_login list
+
         Agendamentos.obj[Agendamentos.cod] = self
         Agendamentos.lst.append(Agendamentos.cod)
         
